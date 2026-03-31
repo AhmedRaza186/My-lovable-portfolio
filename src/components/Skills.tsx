@@ -2,10 +2,9 @@ import { motion } from "framer-motion";
 
 const technicalSkills = [
   { name: "HTML & CSS", level: 90 },
-  { name: "JavaScript", level: 80 },
-  { name: "React / Next.js", level: 75 },
-  { name: "Firebase", level: 70 },
-  { name: "Supabase", level: 65 },
+  { name: "JavaScript", level: 90 },
+  { name: "Firebase", level: 80 },
+  { name: "Supabase", level: 70 },
   { name: "Node.js / Express", level: 65 },
   { name: "MongoDB", level: 60 },
 ];
