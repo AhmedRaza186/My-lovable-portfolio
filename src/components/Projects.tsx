@@ -162,7 +162,9 @@ const projects: Project[] = [
   },
 ];
 
+
 const Projects = () => {
+  const [expanded, setExpanded] = useState<string | null>(null);
   const [active, setActive] = useState("All");
 
   const filtered = active === "All" ? projects : projects.filter((p) => p.category === active);
@@ -187,11 +189,10 @@ const Projects = () => {
             <button
               key={cat}
               onClick={() => setActive(cat)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border ${
-                active === cat
-                  ? "bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/25"
-                  : "bg-muted/50 text-muted-foreground border-border/50 hover:bg-primary/10 hover:text-primary hover:border-primary/30"
-              }`}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border ${active === cat
+                ? "bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/25"
+                : "bg-muted/50 text-muted-foreground border-border/50 hover:bg-primary/10 hover:text-primary hover:border-primary/30"
+                }`}
             >
               {cat}
             </button>
@@ -217,7 +218,7 @@ const Projects = () => {
                 className="glass-card-hover group relative overflow-hidden flex flex-col"
               >
                 {/* Thumbnail */}
-                <div className="relative h-52 overflow-hidden rounded-t-xl bg-muted/30">
+                <div className="relative h-45 overflow-hidden rounded-t-xl bg-muted/30">
                   {project.image ? (
                     <img
                       src={project.image}
@@ -238,9 +239,17 @@ const Projects = () => {
                   <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors duration-300 mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-2">
+                  <p
+                    onClick={() =>
+                      setExpanded(expanded === project.title ? null : project.title)
+                    }
+                    className={`text-muted-foreground text-sm leading-relaxed mb-4 cursor-pointer transition-all duration-300 overflow-hidden ${expanded === project.title ? "max-h-40 opacity-100" : "max-h-12 opacity-80 line-clamp-2"
+                      }`}
+                  >
                     {project.description}
                   </p>
+
+
                   <div className="flex flex-wrap gap-2 mb-5">
                     {project.tech.map((t) => (
                       <span

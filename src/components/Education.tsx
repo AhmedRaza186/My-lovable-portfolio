@@ -1,11 +1,17 @@
 import { motion } from "framer-motion";
-import { GraduationCap, BookOpen } from "lucide-react";
+import { GraduationCap, BookOpen, Glasses } from "lucide-react";
 
 const educationItems = [
   {
+    icon: Glasses,
+    title: "Matriculation - Computer Science",
+    subtitle: "Raza Foundation School",
+    description: "Completed matriculation with a focus on computer science and basic technology concepts",
+  },
+  {
     icon: GraduationCap,
-    title: "Intermediate Part 2 – Commerce",
-    subtitle: "Currently Enrolled",
+    title: "Intermediate ( ongoing )",
+    subtitle: "Govt.College of Commerce & Economics",
     description: "Studying commerce with a focus on accounting and business fundamentals.",
   },
   {
