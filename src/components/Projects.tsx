@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Github, Linkedin } from "lucide-react";
 
+import AutoQA from "@/assets/projects/AutoQA.png";
 import quizifyImg from "@/assets/projects/quizify.jpg";
 import healthmateImg from "@/assets/projects/healthmate.jpg";
 import rollclashImg from "@/assets/projects/rollclash.jpg";
@@ -30,6 +31,26 @@ interface Project {
 const categories = ["All", "Full Stack", "Games", "Frontend", "API Projects"];
 
 const projects: Project[] = [
+  {
+    title: "AutoQA",
+    description: "Auto-QA is an AI-powered testing platform that analyzes GitHub repositories, generates intelligent test cases, creates Playwright automation scripts, executes them in real time, and converts execution logs into human-readable reports",
+    tech: ["NEXT.js", "React", "TypeScript", "Drizzle ORM","PostgreSQL / Neon","GitHub OAuth","Google Gemini AI","Stripe","Clerk","Playwright"],
+    repoUrl: "https://github.com/AhmedRaza186/Auto-QA",
+    liveUrl: "https://auto-qa-rouge.vercel.app/",
+    linkedinUrl: "not uploaded yet",
+    category: "Full Stack",
+    image: AutoQA,
+  },
+  {
+    title: "Quizify",
+    description: "An interactive quiz application with user authentication, score tracking, and real-time feedback.",
+    tech: ["HTML", "CSS", "JavaScript", "Firebase"],
+    repoUrl: "https://github.com/AhmedRaza186/Quizify",
+    liveUrl: "https://ahmedraza186.github.io/Quizify/",
+    linkedinUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7426992859721129984/",
+    category: "Full Stack",
+    image: quizifyImg,
+  },
   {
     title: "Quizify",
     description: "An interactive quiz application with user authentication, score tracking, and real-time feedback.",
